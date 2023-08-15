@@ -48,3 +48,58 @@ torch.backends.cudnn.benchmark = True
 resnet = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
 resnet.fc = nn.Linear(512, 10) # 출력층의 뉴런 수는 10
 
+# 모델 학습을 위한 하이퍼파라미터 설정
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(resnet.parameters(), lr=0.001, momentum=0.9)
+
+# 모델 학습
+resnet.to(device)
+for epoch in range(10):
+    running_loss = 0.0
+    for i, data in enumerate(trainloader, 0):
+        inputs, labels = data
+        inputs, labels = inputs.to(device), labels.to(device)
+
+        optimizer.zero_grad()
+
+        outputs = resnet(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+        running_loss += loss.item()
+        if i % 10 == 4:
+            print('[epoch :%d, %3d] loss: %.3f' % (epoch+1, i+1, running_loss/100))
+            running_loss = 0.0
+
+    # 검증 데이터셋을 이용하여 모델 성능 평가
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in valloader:
+            images, labels = data
+            images, labels = images.to(device), labels.to(device)
+            outputs = resnet(images)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+
+    print('Accuracy of the network on the validation images: %d %%' % (100 * correct / total))
+
+# 모델 평가
+correct = 0
+total = 0
+with torch.no_grad():
+    for data in testloader:
+        images, labels = data
+        images, labels = images.to(device), labels.to(device)
+        outputs = resnet(images)
+        _, predicted = torch.max(outputs.data, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+
+print('Accuracy of the network on the test images: %d %%' % (100 * correct / total))
+
+# 모델 가중치와 state_dict 저장
+#checkpoint = {'model_state_dict': resnet.state_dict()}
+#torch.save(checkpoint, 'resnet18_model.pth')
