@@ -18,6 +18,7 @@ data_transforms = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
+
 # 이미지 데이터셋
 train_dataset = datasets.ImageFolder(root='trainImages', transform=data_transforms)
 test_dataset = datasets.ImageFolder(root='testImages', transform=data_transforms)
@@ -27,21 +28,27 @@ resnet.fc = nn.Sequential(
     nn.Dropout(p=0.5),  # 드롭아웃 추가
     nn.Linear(512, 26)  # 출력층의 뉴런 수는 26
 )
+
 # L2 정규화 적용할 가중치 파라미터를 모아둘 리스트
 weight_decay_params = []
 bias_params = []
+
 # 정규화 비율 설정
 weight_decay = 0.001
+
 # 모든 가중치 파라미터를 추출하여 정규화 적용
 for name, param in resnet.named_parameters():
     if 'bias' in name:
         bias_params.append(param)
     else:
         weight_decay_params.append(param)
+
 # 교차 검증을 위한 KFold 객체 생성
 kfold = KFold(n_splits=5, shuffle=True)
+
 # 각 폴드에 대해 반복
 for fold, (train_indices, val_indices) in enumerate(kfold.split(train_dataset)):
+
     # 데이터셋 분할
     train_sampler = torch.utils.data.SubsetRandomSampler(train_indices)
     val_sampler = torch.utils.data.SubsetRandomSampler(val_indices)
@@ -49,15 +56,19 @@ for fold, (train_indices, val_indices) in enumerate(kfold.split(train_dataset)):
                                               sampler=train_sampler, num_workers=0)
     valloader = torch.utils.data.DataLoader(train_dataset, batch_size=32,
                                             sampler=val_sampler, num_workers=0)
+
     # 모델 학습을 위한 하이퍼파라미터 설정
     criterion = nn.CrossEntropyLoss()
+
     # 정규화를 위한 optimizer 생성
     optimizer = optim.SGD([
         {'params': weight_decay_params, 'weight_decay': weight_decay},
         {'params': bias_params, 'weight_decay': 0.0}
     ], lr=0.001, momentum=0.9)
+
     # 학습률 스케줄러 생성
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
+
     # 모델 학습
     resnet.to(device)
     best_accuracy = 0.0  # 최고 정확도를 저장하기 위한 변수
@@ -133,6 +144,7 @@ with torch.no_grad():
         correct += (predicted == labels).sum().item()
 test_accuracy = 100 * correct / total
 print('Accuracy of the network on the testImages images: %.2f %%' % test_accuracy)
+
 # 모델 가중치 저장
 torch.save(resnet.state_dict(), 'resnet34_weights.pth')
 
