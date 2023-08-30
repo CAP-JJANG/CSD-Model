@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a2c5cba-3ae1-4d71-a797-1a88dc690390" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="8a2c5cba-3ae1-4d71-a797-1a88dc690390" name="Changes" comment="kfold 교차검증, 스케줄링" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +44,18 @@
       <option name="presentableId" value="Default" />
       <updated>1691750928649</updated>
     </task>
+    <task id="LOCAL-00001" summary="kfold 교차검증, 스케줄링">
+      <created>1693369335524</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693369335524</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="kfold 교차검증, 스케줄링" />
+    <option name="LAST_COMMIT_MESSAGE" value="kfold 교차검증, 스케줄링" />
   </component>
 </project>
