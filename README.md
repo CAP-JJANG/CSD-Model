@@ -1,11 +1,11 @@
 ## :raised_hands: 소개
 **[ENG]**
-CSD-Model that learns and distinguishes images created using ResNet-34 architecture.
+  CSD-Model that learns and distinguishes images created using ResNet-34 architecture.
 
 <br>
 
 **[KOR]**
-ResNet-34 아키텍처를 사용하여 만든 이미지를 학습하고 구분하는 CSD-Model입니다.
+  CSD-Model은 ResNet-34를 사용하여 음향신호의 시각적인 특징을 추출하고, 이러한 특징을 기반으로 손글씨 인식을 수행하는 딥러닝 모델입니다.
 
 
 <br><br>
@@ -44,8 +44,9 @@ ResNet-34 아키텍처를 사용하여 만든 이미지를 학습하고 구분�
 
 <br><br>
 ## 🔗 서비스 아키텍처
-![Group 288 (2)](https://github.com/CAP-JJANG/CSD-Model/assets/100428958/6b6a6556-f31f-47e9-a5e7-9d565c0d93a9)
-
+<div align="center">
+  <img width="60%" alt="image" src="https://github.com/CAP-JJANG/.github/assets/92065911/7fcd5810-2541-4a52-a0aa-a758c61e8fc8">
+</div>
 
 <br><br>
 ## ⭐️ 설치 방법
