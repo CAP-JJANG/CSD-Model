@@ -37,7 +37,7 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
 
 <br><br>
 ## 🦾 주요 기술
-**Server - Django**
+**Model - CNN**
 * PyCharm IDE
 * Python 3.9.13
 * Scikit_learn 1.3.1
