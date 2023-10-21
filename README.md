@@ -1,3 +1,73 @@
-# CSD-Model (Capjjang Spectrogram Detection-Model)
+## :raised_hands: 소개
+**[ENG]**
+CSD-Model that learns and distinguishes images created using ResNet-34 architecture.
 
-음향 신호 감지를 통한 문자 인식 모델
+<br>
+
+**[KOR]**
+ResNet-34 아키텍처를 사용하여 만든 이미지를 학습하고 구분하는 CSD-Model입니다.
+
+
+<br><br>
+## 💪 주요 기능
+**[ENG]**
+1. Set up the GPU usage environment in PyTorch.
+2. Configure transformations that define data preprocessing and normalization for input images.
+3. Define the dataset and apply the data transform.
+4. Create an image classification model using the ResNet-34 architecture.
+5. Apply L2 normalization.
+6. K-Fold cross-validation learns the model and evaluates its performance.
+7. Save the model weight if you have the highest accuracy per fold.
+8. Save the learning and test results to a file.
+
+<br>
+
+**[KOR]**
+1. PyTorch에서 GPU 사용 환경을 설정합니다.
+2. 입력 이미지에 대한 데이터 전처리 및 정규화를 정의하는 변환을 구성합니다.
+3. 데이터셋을 정의하고, 데이터 변환을 적용합니다.
+4. ResNet-34 아키텍처를 사용하여 이미지 분류 모델을 생성합니다.
+5. L2 정규화를 적용합니다.
+6. K-Fold 교차 검증을 통해 모델을 학습하고 성능을 평가합니다.
+7. 폴드별 최고 정확도를 가진 경우 모델 가중치를 저장합니다.
+8. 학습 및 테스트 결과를 파일에 저장합니다.
+   
+
+<br><br>
+## 🦾 주요 기술
+**Server - Django**
+* PyCharm IDE
+* Python 3.9.13
+* Scikit_learn 1.3.1
+* Torch 1.13.1
+* Torchvision 0.14.1
+
+<br><br>
+## 🔗 서비스 아키텍처
+![Group 288 (1)](https://github.com/CAP-JJANG/CSD-Model/assets/100428958/06a91d58-736f-4c6e-8e35-2069a09d5961)
+
+
+<br><br>
+## ⭐️ 설치 방법
+1. clone [github 리포지토리 주소]
+2. 가상환경 생성
+    1. python -m venv venv 또는 python3 -m venv venv
+3. 가상환경 실행
+    1. Windows
+        1. venv\Scripts\activate
+    2. macOS 및 Linux
+        1. source venv/bin/activate
+4. pip 최신버전으로 업그레이드
+   python -m pip install --upgrade pip
+    또는
+   python3 -m pip install --upgrade pip
+5. 패키지 설치
+    1. pip install -r requirements.txt
+    2. pip3 install -r requirements.txt <br>
+6. 프로젝트 Run
+
+<br><br>
+## 🤖 라이센스
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/CAP-JJANG/CSD-Model/blob/main/LICENSE) file for details.  
+[OSS Notice](https://github.com/CAP-JJANG/CSD-Model/blob/main/OSS-Notice.md) sets forth attribution notices for third party software that may be contained in this application.
+
