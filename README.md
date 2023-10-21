@@ -1,11 +1,13 @@
 ## :raised_hands: 소개
-**[ENG]**
-  CSD-Model that learns and distinguishes images created using ResNet-34 architecture.
+**[ENG]**  
+CSD-Model that learns and distinguishes images created using ResNet-34 architecture.
 
 <br>
 
-**[KOR]**
-  CSD-Model은 ResNet-34를 사용하여 음향신호의 시각적인 특징을 추출하고, 이러한 특징을 기반으로 손글씨 인식을 수행하는 딥러닝 모델입니다.
+**[KOR]**  
+[MakeDataset](https://github.com/CAP-JJANG/MakeDataset)를 활용하여 음향신호를 스펙트로그램으로 변환하고, 이 스펙트로그램 데이터를 CSD-Model의 학습 데이터셋으로 활용합니다.  
+CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델로, 스펙트로그램의 시각적인 특징을 추출하는 손글씨 음향신호 인식 딥러닝 모델입니다.
+
 
 
 <br><br>
@@ -43,7 +45,7 @@
 * Torchvision 0.14.1
 
 <br><br>
-## 🔗 서비스 아키텍처
+## 🧬 모델 아키텍처
 <div align="center">
   <img width="60%" alt="image" src="https://github.com/CAP-JJANG/.github/assets/92065911/7fcd5810-2541-4a52-a0aa-a758c61e8fc8">
 </div>
@@ -52,20 +54,42 @@
 ## ⭐️ 설치 방법
 1. clone [github 리포지토리 주소]
 2. 가상환경 생성
-    1. python -m venv venv 또는 python3 -m venv venv
-3. 가상환경 실행
-    1. Windows
-        1. venv\Scripts\activate
-    2. macOS 및 Linux
-        1. source venv/bin/activate
-4. pip 최신버전으로 업그레이드
+   ```
+   python -m venv venv
+   ```
+   또는
+   
+   ```
+   python3 -m venv venv
+   ```
+4. 가상환경 실행
+    - Windows
+       ```
+       venv\Scripts\activate
+       ```
+    - macOS 및 Linux
+       ```
+       source venv/bin/activate
+       ```
+5. pip 최신버전으로 업그레이드
+   ```
    python -m pip install --upgrade pip
+   ```
     또는
+    
+   ```
    python3 -m pip install --upgrade pip
-5. 패키지 설치
-    1. pip install -r requirements.txt
-    2. pip3 install -r requirements.txt <br>
-6. 프로젝트 Run
+   ```
+7. 패키지 설치
+   ```
+   pip install -r requirements.txt
+   ```
+   또는
+   
+   ```
+   pip3 install -r requirements.txt
+   ```
+9. 프로젝트 Run
 
 <br><br>
 ## 🤖 라이센스
