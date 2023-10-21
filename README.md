@@ -44,7 +44,7 @@ ResNet-34 아키텍처를 사용하여 만든 이미지를 학습하고 구분�
 
 <br><br>
 ## 🔗 서비스 아키텍처
-![Group 288 (1)](https://github.com/CAP-JJANG/CSD-Model/assets/100428958/06a91d58-736f-4c6e-8e35-2069a09d5961)
+![Group 288 (2)](https://github.com/CAP-JJANG/CSD-Model/assets/100428958/6b6a6556-f31f-47e9-a5e7-9d565c0d93a9)
 
 
 <br><br>
