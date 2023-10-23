@@ -52,8 +52,9 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
 
 <br><br>
 ## ⭐️ 설치 방법
-1. clone [github 리포지토리 주소]
-2. 가상환경 생성
+1. git clone [github 리포지토리 주소]
+2. cd CSD-Model
+3. 가상환경 생성
    ```
    python -m venv venv
    ```
@@ -62,7 +63,7 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
    ```
    python3 -m venv venv
    ```
-3. 가상환경 실행
+4. 가상환경 실행
     - Windows
        ```
        venv\Scripts\activate
@@ -71,7 +72,7 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
        ```
        source venv/bin/activate
        ```
-4. pip 최신버전으로 업그레이드
+5. pip 최신버전으로 업그레이드
    ```
    python -m pip install --upgrade pip
    ```
@@ -80,7 +81,7 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
    ```
    python3 -m pip install --upgrade pip
    ```
-5. 패키지 설치
+6. 패키지 설치
    ```
    pip install -r requirements.txt
    ```
@@ -89,7 +90,7 @@ CSD-Model은 ResNet-34 아키텍처를 기반으로한 이미지 분류 모델�
    ```
    pip3 install -r requirements.txt
    ```
-6. 프로젝트 Run
+7. 프로젝트 Run
 
 <br><br>
 ## 🤖 라이센스
